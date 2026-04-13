@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JOEL Portfolio</title>
+
+<style>
+body {
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#ffffff;
+  color:#1f2937;
+}
+
+/* LOGIN */
+.login {
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#f3f4f6;
+}
+.login-box {
+  background:white;
+  padding:30px;
+  border-radius:10px;
+  width:320px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+input,button {
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+button {
+  background:#2563eb;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+.hidden {display:none;}
+
+/* NAVBAR */
+nav {
+  background:#1f2937;
+  color:white;
+  padding:15px 40px;
+  display:flex;
+  justify-content:space-between;
+}
+nav a {
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+}
+nav a:hover {
+  text-decoration:underline;
+}
+
+/* HERO */
+.hero {
+  padding:60px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #e5e7eb;
+}
+.hero-text h1 {
+  font-size:36px;
+}
+.hero-text span {
+  color:#2563eb;
+}
+.hero img {
+  width:140px;
+  border-radius:10px;
+}
+
+/* SECTION */
+.section {
+  padding:40px;
+  max-width:900px;
+  margin:auto;
+}
+.section h2 {
+  border-bottom:2px solid #2563eb;
+  display:inline-block;
+  margin-bottom:20px;
+}
+
+/* SKILLS */
+.skills span {
+  display:inline-block;
+  border:1px solid #ccc;
+  padding:5px 10px;
+  margin:5px;
+  border-radius:5px;
+}
+
+/* PROJECT */
+.project {
+  margin-bottom:20px;
+}
+.btn {
+  display:inline-block;
+  padding:5px 10px;
+  margin-right:8px;
+  border-radius:5px;
+  text-decoration:none;
+  font-size:13px;
+}
+.live {background:#16a34a;color:white;}
+.code {background:#374151;color:white;}
+
+/* CONTACT */
+.links a {
+  margin-right:10px;
+  color:#2563eb;
+  text-decoration:none;
+}
+.links a:hover {
+  text-decoration:underline;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div class="login" id="loginPage">
+  <div class="login-box">
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="text" id="phone" placeholder="Phone">
+    <button onclick="login()">Enter</button>
+    <p id="error" style="color:red;"></p>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div id="main" class="hidden">
+
+<nav>
+  <h3>Joel Kurian</h3>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <h1>Hi, I'm <span>Joel Kurian</span></h1>
+    <p>A Computer Science student focused on building real-world skills.</p>
+  </div>
+  <img src="yourimage.jpg">
+</div>
+
+<!-- ABOUT -->
+<div class="section" id="about">
+  <h2>About Me</h2>
+  <p>
+    I’m a Computer Science student focused on building real skills through consistent practice and projects.
+    I believe in discipline, learning by doing, and improving every day. I am a excellent driver and a pasionate learner, i am intreasted in computers 
+  </p>
+</div>
+
+<!-- SKILLS -->
+<div class="section" id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <span>Python</span>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>networking</span>
+    <span>Vibecoding</span>
+    <span
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="section" id="projects">
+  <h2>Projects</h2>
+
+  <div class="project">
+    <h3>Age Calculator</h3>
+    <a href="#" class="btn live">Live</a>
+    <a href="#" class="btn code">Code</a>
+  </div>
+
+  <div class="project">
+    <h3>Marks Calculator</h3>
+    <a href="#" class="btn live">Live</a>
+    <a href="#" class="btn code">Code</a>
+  </div>
+  <div class="project">
+    <h3> Calculator</h3>
+    <a href="#" class="btn live">Live</a>
+    <a href="#" class="btn code">Code</a>
+  </div>
+
+
+</div>
+
+<!-- CONTACT -->
+<div class="section" id="contact">
+  <h2>Contact</h2>
+  <p>Email: joelkurian0507@gmail.com</p>
+
+  <div class="links">
+    <a href="https://github.com/joelkurian0507-exe">GitHub</a>
+    <a href="https://www.linkedin.com/in/joel-kurian-77a9ab3b7/">LinkedIn</a>
+    <a href="8590939270">Phone number</a>
+  </div>
+</div>
+
+</div>
+
+<script>
+function login() {
+  let email = document.getElementById("email").value;
+  let phone = document.getElementById("phone").value;
+  let error = document.getElementById("error");
+
+  let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  let phonePattern = /^[0-9]{10}$/;
+
+  if (!email.match(emailPattern)) {
+    error.innerText = "Invalid Email";
+    return;
+  }
+  if (!phone.match(phonePattern)) {
+    error.innerText = "Invalid Phone";
+    return;
+  }
+
+  document.getElementById("loginPage").classList.add("hidden");
+  document.getElementById("main").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
